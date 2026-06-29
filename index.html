@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>视觉设计师作品集</title>
+<title>è§è§è®¾è®¡å¸ä½åé</title>
 <style>
 /* ============================================================
-   CSS Variables — 统一配色管理，修改此处即可全局生效
+   CSS Variables â ç»ä¸éè²ç®¡çï¼ä¿®æ¹æ­¤å¤å³å¯å¨å±çæ
    ============================================================ */
 :root {
   --color-bg: #0d0d0d;
@@ -65,7 +65,7 @@ img {
 }
 
 /* ============================================================
-   Navigation — 固定顶部导航
+   Navigation â åºå®é¡¶é¨å¯¼èª
    ============================================================ */
 .nav {
   position: fixed;
@@ -92,7 +92,7 @@ img {
   justify-content: space-between;
 }
 
-/* EDIT: 王丽聪 */
+/* EDIT: ä¿®æ¹ Logo/å§å */
 .nav__logo {
   font-family: var(--font-heading);
   font-size: 1.25rem;
@@ -116,7 +116,7 @@ img {
 }
 .nav__links a:hover { color: var(--color-accent); }
 
-/* 汉堡菜单按钮 */
+/* æ±å ¡èåæé® */
 .nav__toggle {
   display: none;
   flex-direction: column;
@@ -198,7 +198,7 @@ img {
   margin-bottom: 60px;
 }
 
-/* 滚动渐入动画 */
+/* æ»å¨æ¸å¥å¨ç» */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -210,7 +210,7 @@ img {
 }
 
 /* ============================================================
-   Hero — 首屏全屏展示
+   Hero â é¦å±å¨å±å±ç¤º
    ============================================================ */
 .hero {
   min-height: 100vh;
@@ -224,7 +224,7 @@ img {
   overflow: hidden;
 }
 
-/* 背景光晕装饰 */
+/* èæ¯åæè£é¥° */
 .hero::before {
   content: '';
   position: absolute;
@@ -237,7 +237,7 @@ img {
   pointer-events: none;
 }
 
-/* EDIT: 修改设计师姓名 */
+/* EDIT: ä¿®æ¹è®¾è®¡å¸å§å */
 .hero__name {
   font-family: var(--font-heading);
   font-size: clamp(2.8rem, 6vw, 4.5rem);
@@ -247,7 +247,7 @@ img {
   position: relative;
 }
 
-/* EDIT: 修改职位头衔 */
+/* EDIT: ä¿®æ¹èä½å¤´è¡ */
 .hero__role {
   font-size: 1.2rem;
   color: var(--color-accent);
@@ -257,7 +257,7 @@ img {
   margin-bottom: 24px;
 }
 
-/* EDIT: 修改一句话简介 */
+/* EDIT: ä¿®æ¹ä¸å¥è¯ç®ä» */
 .hero__tagline {
   font-size: 1.05rem;
   color: var(--color-text-muted);
@@ -266,7 +266,7 @@ img {
   line-height: 1.8;
 }
 
-/* CTA 按钮 */
+/* CTA æé® */
 .hero__cta {
   display: inline-block;
   padding: 14px 40px;
@@ -286,7 +286,7 @@ img {
 }
 
 /* ============================================================
-   About — 关于我
+   About â å³äºæ
    ============================================================ */
 .about {
   background: var(--color-surface);
@@ -299,7 +299,7 @@ img {
   align-items: center;
 }
 
-/* EDIT: 头像区域 — 替换为真实头像图片 */
+/* EDIT: å¤´ååºå â æ¿æ¢ä¸ºçå®å¤´åå¾ç */
 .about__avatar {
   width: 260px;
   height: 260px;
@@ -321,7 +321,7 @@ img {
   object-fit: cover;
 }
 
-/* EDIT: 个人简介文字 */
+/* EDIT: ä¸ªäººç®ä»æå­ */
 .about__text p {
   color: var(--color-text-muted);
   font-size: 0.98rem;
@@ -340,14 +340,14 @@ img {
 }
 
 /* ============================================================
-   Experience — 工作经历时间线
+   Experience â å·¥ä½ç»åæ¶é´çº¿
    ============================================================ */
 .timeline {
   position: relative;
   padding-left: 40px;
 }
 
-/* 左侧竖线 */
+/* å·¦ä¾§ç«çº¿ */
 .timeline::before {
   content: '';
   position: absolute;
@@ -365,7 +365,7 @@ img {
 }
 .timeline__item:last-child { margin-bottom: 0; }
 
-/* 圆点节点 */
+/* åç¹èç¹ */
 .timeline__item::before {
   content: '';
   position: absolute;
@@ -379,7 +379,7 @@ img {
   box-shadow: 0 0 0 2px var(--color-accent);
 }
 
-/* EDIT: 公司/机构名称 */
+/* EDIT: å¬å¸/æºæåç§° */
 .timeline__company {
   font-family: var(--font-heading);
   font-size: 1.15rem;
@@ -387,7 +387,7 @@ img {
   margin-bottom: 2px;
 }
 
-/* EDIT: 职位 */
+/* EDIT: èä½ */
 .timeline__role {
   color: var(--color-accent);
   font-size: 0.9rem;
@@ -395,7 +395,7 @@ img {
   margin-bottom: 4px;
 }
 
-/* EDIT: 时间区间 */
+/* EDIT: æ¶é´åºé´ */
 .timeline__date {
   color: var(--color-text-muted);
   font-size: 0.8rem;
@@ -403,7 +403,7 @@ img {
   letter-spacing: 1px;
 }
 
-/* EDIT: 工作描述 */
+/* EDIT: å·¥ä½æè¿° */
 .timeline__desc {
   color: var(--color-text-muted);
   font-size: 0.9rem;
@@ -418,7 +418,7 @@ img {
 }
 
 /* ============================================================
-   Portfolio — 作品集
+   Portfolio â ä½åé
    ============================================================ */
 .portfolio__filters {
   display: flex;
@@ -468,7 +468,7 @@ img {
   box-shadow: 0 12px 40px rgba(0,0,0,0.4);
 }
 
-/* 图片占位区 */
+/* å¾çå ä½åº */
 .portfolio__image {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -489,7 +489,7 @@ img {
 }
 .portfolio__card:hover .portfolio__image img { transform: scale(1.06); }
 
-/* 遮罩层 */
+/* é®ç½©å± */
 .portfolio__overlay {
   position: absolute;
   inset: 0;
@@ -516,7 +516,7 @@ img {
   padding: 20px;
 }
 
-/* EDIT: 分类标签 */
+/* EDIT: åç±»æ ç­¾ */
 .portfolio__tag {
   display: inline-block;
   font-size: 0.72rem;
@@ -529,7 +529,7 @@ img {
   text-transform: uppercase;
 }
 
-/* EDIT: 作品名 */
+/* EDIT: ä½åå */
 .portfolio__name {
   font-family: var(--font-heading);
   font-size: 1.05rem;
@@ -537,14 +537,14 @@ img {
   margin-bottom: 6px;
 }
 
-/* EDIT: 作品简述 */
+/* EDIT: ä½åç®è¿° */
 .portfolio__desc {
   color: var(--color-text-muted);
   font-size: 0.82rem;
   line-height: 1.5;
 }
 
-/* 隐藏类 — 用于筛选 */
+/* éèç±» â ç¨äºç­é */
 .portfolio__card.hidden { display: none; }
 
 @media (max-width: 1024px) {
@@ -555,7 +555,7 @@ img {
 }
 
 /* ============================================================
-   Lightbox — 灯箱模态框
+   Lightbox â ç¯ç®±æ¨¡ææ¡
    ============================================================ */
 .lightbox {
   position: fixed;
@@ -612,18 +612,11 @@ img {
 
 .lightbox__image {
   width: 100%;
-  aspect-ratio: 16 / 10;
   background: var(--color-surface-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
 }
 .lightbox__image img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  display: block;
 }
 
 .lightbox__details { padding: 32px; }
@@ -650,7 +643,7 @@ img {
 }
 
 /* ============================================================
-   Contact — 联系方式
+   Contact â èç³»æ¹å¼
    ============================================================ */
 .contact {
   background: var(--color-surface);
@@ -676,7 +669,7 @@ img {
   box-shadow: 0 8px 30px rgba(0,0,0,0.3);
 }
 
-/* 纯 CSS 图标 */
+/* çº¯ CSS å¾æ  */
 .contact__icon {
   width: 48px;
   height: 48px;
@@ -693,7 +686,7 @@ img {
   letter-spacing: 1px;
 }
 
-/* EDIT: 联系方式内容 */
+/* EDIT: èç³»æ¹å¼åå®¹ */
 .contact__value {
   font-size: 1rem;
   font-weight: 600;
@@ -705,7 +698,7 @@ img {
 }
 
 /* ============================================================
-   Footer — 页脚
+   Footer â é¡µè
    ============================================================ */
 .footer {
   text-align: center;
@@ -721,71 +714,71 @@ img {
 <body>
 
 <!-- ============================================================
-     Navigation — 导航栏
+     Navigation â å¯¼èªæ 
      ============================================================ -->
 <nav class="nav" id="nav">
   <div class="nav__inner">
-    <!-- EDIT: 修改 Logo / 设计师姓名 -->
+    <!-- EDIT: ä¿®æ¹ Logo / è®¾è®¡å¸å§å -->
     <a href="#hero" class="nav__logo">Designer</a>
 
     <ul class="nav__links" id="navLinks">
-      <li><a href="#about">关于我</a></li>
-      <li><a href="#experience">经历</a></li>
-      <li><a href="#portfolio">作品</a></li>
-      <li><a href="#contact">联系</a></li>
+      <li><a href="#about">å³äºæ</a></li>
+      <li><a href="#experience">ç»å</a></li>
+      <li><a href="#portfolio">ä½å</a></li>
+      <li><a href="#contact">èç³»</a></li>
     </ul>
 
-    <button class="nav__toggle" id="navToggle" aria-label="菜单">
+    <button class="nav__toggle" id="navToggle" aria-label="èå">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
 <!-- ============================================================
-     Hero — 首屏
+     Hero â é¦å±
      ============================================================ -->
 <section class="hero" id="hero">
   <div>
-    <!-- EDIT: 修改设计师姓名 -->
-    <h1 class="hero__name">王丽聪</h1>
-    <!-- EDIT: 修改职位头衔 -->
-    <p class="hero__role">视觉经理/资深视觉设计师</p>
-    <!-- EDIT: 修改一句话简介 -->
+    <!-- EDIT: ä¿®æ¹è®¾è®¡å¸å§å -->
+    <h1 class="hero__name">å¼ é¸å¡</h1>
+    <!-- EDIT: ä¿®æ¹èä½å¤´è¡ -->
+    <p class="hero__role">èµæ·±è§è§è®¾è®¡å¸</p>
+    <!-- EDIT: ä¿®æ¹ä¸å¥è¯ç®ä» -->
     <p class="hero__tagline">
-      10年+设计行业深耕，精通国内电商、线下品牌全案、跨境电商全场景视觉设计，擅长以视觉语言落地商业策略，打造兼具品牌调性与转化能力的设计方案。
+      ä¸æ³¨åçè®¾è®¡ä¸æ°å­ä½éªï¼7 å¹´è¡ä¸ç»éªï¼æé¿å°åä¸ç­ç¥è½¬åä¸ºè§è§è¯­è¨ã
     </p>
-    <!-- EDIT: 修改 CTA 链接或文案 -->
-    <a href="#portfolio" class="hero__cta">查看作品集</a>
+    <!-- EDIT: ä¿®æ¹ CTA é¾æ¥æææ¡ -->
+    <a href="#portfolio" class="hero__cta">æ¥çä½åé</a>
   </div>
 </section>
 
 <!-- ============================================================
-     About — 关于我
+     About â å³äºæ
      ============================================================ -->
 <section class="section about" id="about">
   <div class="section__inner">
-    <h2 class="section__title fade-in">关于我</h2>
+    <h2 class="section__title fade-in">å³äºæ</h2>
     <p class="section__subtitle fade-in">About Me</p>
 
     <div class="about__grid fade-in">
-      <!-- EDIT: 替换头像 — 将 <div> 改为 <img src="你的头像路径" alt="头像"> -->
+      <!-- EDIT: æ¿æ¢å¤´å â å° <div> æ¹ä¸º <img src="ä½ çå¤´åè·¯å¾" alt="å¤´å"> -->
       <div class="about__avatar">
-        <!-- 占位文字，替换为 <img> 后删除此文字 -->
-        头像占位
+        <!-- å ä½æå­ï¼æ¿æ¢ä¸º <img> åå é¤æ­¤æå­ -->
+        å¤´åå ä½
       </div>
 
       <div class="about__text">
-        <!-- EDIT: 修改个人简介 -->
+        <!-- EDIT: ä¿®æ¹ä¸ªäººç®ä» -->
         <p>
-          我是张逸凡，一名驻扎在上海的资深视觉设计师，拥有 7 年品牌设计与数字产品设计经验。
-          曾服务于多家知名互联网公司与创意热店，主导过多个百万级用户量产品的视觉体系搭建。
+          ææ¯å¼ é¸å¡ï¼ä¸åé©»æå¨ä¸æµ·çèµæ·±è§è§è®¾è®¡å¸ï¼æ¥æ 7 å¹´åçè®¾è®¡ä¸æ°å­äº§åè®¾è®¡ç»éªã
+          æ¾æå¡äºå¤å®¶ç¥åäºèç½å¬å¸ä¸åæç­åºï¼ä¸»å¯¼è¿å¤ä¸ªç¾ä¸çº§ç¨æ·éäº§åçè§è§ä½ç³»æ­å»ºã
         </p>
         <p>
-          我的设计哲学是"少即是多"——追求极致的简洁与功能性平衡，相信好的设计应当让信息传达毫不费力。
-          擅长领域涵盖品牌视觉系统、UI/UX 设计、插画与动效设计。
+          æçè®¾è®¡å²å­¦æ¯"å°å³æ¯å¤"ââè¿½æ±æè´çç®æ´ä¸åè½æ§å¹³è¡¡ï¼ç¸ä¿¡å¥½çè®¾è®¡åºå½è®©ä¿¡æ¯ä¼ è¾¾æ¯«ä¸è´¹åã
+          æé¿é¢åæ¶µçåçè§è§ç³»ç»ãUI/UX è®¾è®¡ãæç»ä¸å¨æè®¾è®¡ã
         </p>
         <p>
-          工作之余，我热爱摄影与旅行，这些爱好持续滋养着我的审美视角。
+          å·¥ä½ä¹ä½ï¼æç­ç±æå½±ä¸æè¡ï¼è¿äºç±å¥½æç»­æ»å»çæçå®¡ç¾è§è§ã
         </p>
       </div>
     </div>
@@ -793,57 +786,57 @@ img {
 </section>
 
 <!-- ============================================================
-     Experience — 工作经历
+     Experience â å·¥ä½ç»å
      ============================================================ -->
 <section class="section" id="experience">
   <div class="section__inner">
-    <h2 class="section__title fade-in">工作经历</h2>
+    <h2 class="section__title fade-in">å·¥ä½ç»å</h2>
     <p class="section__subtitle fade-in">Experience</p>
 
     <div class="timeline fade-in">
 
-      <!-- EDIT: 经历节点 1 -->
+      <!-- EDIT: ç»åèç¹ 1 -->
       <div class="timeline__item">
-        <!-- EDIT: 公司名称 -->
-        <h3 class="timeline__company">字节跳动</h3>
-        <!-- EDIT: 职位 -->
-        <p class="timeline__role">高级视觉设计师</p>
-        <!-- EDIT: 时间 -->
-        <p class="timeline__date">2022.03 — 至今</p>
-        <!-- EDIT: 工作描述 -->
+        <!-- EDIT: å¬å¸åç§° -->
+        <h3 class="timeline__company">å­èè·³å¨</h3>
+        <!-- EDIT: èä½ -->
+        <p class="timeline__role">é«çº§è§è§è®¾è®¡å¸</p>
+        <!-- EDIT: æ¶é´ -->
+        <p class="timeline__date">2022.03 â è³ä»</p>
+        <!-- EDIT: å·¥ä½æè¿° -->
         <p class="timeline__desc">
-          负责抖音电商业务线品牌视觉体系搭建，主导设计系统从 0 到 1 建设，覆盖运营活动、营销物料、直播视觉规范。带领 4 人设计小组，年度项目交付量超 200 个。
+          è´è´£æé³çµåä¸å¡çº¿åçè§è§ä½ç³»æ­å»ºï¼ä¸»å¯¼è®¾è®¡ç³»ç»ä» 0 å° 1 å»ºè®¾ï¼è¦çè¿è¥æ´»å¨ãè¥éç©æãç´æ­è§è§è§èãå¸¦é¢ 4 äººè®¾è®¡å°ç»ï¼å¹´åº¦é¡¹ç®äº¤ä»éè¶ 200 ä¸ªã
         </p>
       </div>
 
-      <!-- EDIT: 经历节点 2 -->
+      <!-- EDIT: ç»åèç¹ 2 -->
       <div class="timeline__item">
-        <h3 class="timeline__company">网易</h3>
-        <p class="timeline__role">视觉设计师</p>
-        <p class="timeline__date">2019.06 — 2022.02</p>
+        <h3 class="timeline__company">ç½æ</h3>
+        <p class="timeline__role">è§è§è®¾è®¡å¸</p>
+        <p class="timeline__date">2019.06 â 2022.02</p>
         <p class="timeline__desc">
-          负责网易云音乐品牌营销视觉设计，主导多个 S 级运营活动主视觉创作。参与 8.0 大版本品牌升级项目，重新定义视觉语言规范。
+          è´è´£ç½æäºé³ä¹åçè¥éè§è§è®¾è®¡ï¼ä¸»å¯¼å¤ä¸ª S çº§è¿è¥æ´»å¨ä¸»è§è§åä½ãåä¸ 8.0 å¤§çæ¬åçåçº§é¡¹ç®ï¼éæ°å®ä¹è§è§è¯­è¨è§èã
         </p>
       </div>
 
-      <!-- EDIT: 经历节点 3 -->
+      <!-- EDIT: ç»åèç¹ 3 -->
       <div class="timeline__item">
-        <h3 class="timeline__company">W 创意热店</h3>
-        <p class="timeline__role">平面设计师</p>
-        <p class="timeline__date">2017.07 — 2019.05</p>
+        <h3 class="timeline__company">W åæç­åº</h3>
+        <p class="timeline__role">å¹³é¢è®¾è®¡å¸</p>
+        <p class="timeline__date">2017.07 â 2019.05</p>
         <p class="timeline__desc">
-          服务快消、美妆、科技行业客户，包括 Nike、L'Oréal、华为等品牌。负责品牌 Campaign 主视觉、社交媒体视觉内容、线下活动物料设计。
+          æå¡å¿«æ¶ãç¾å¦ãç§æè¡ä¸å®¢æ·ï¼åæ¬ NikeãL'OrÃ©alãåä¸ºç­åçãè´è´£åç Campaign ä¸»è§è§ãç¤¾äº¤åªä½è§è§åå®¹ãçº¿ä¸æ´»å¨ç©æè®¾è®¡ã
         </p>
       </div>
 
-      <!-- EDIT: 如需第 4 个经历节点，取消下方注释 -->
+      <!-- EDIT: å¦éç¬¬ 4 ä¸ªç»åèç¹ï¼åæ¶ä¸æ¹æ³¨é -->
       <!--
       <div class="timeline__item">
-        <h3 class="timeline__company">某某设计工作室</h3>
-        <p class="timeline__role">实习设计师</p>
-        <p class="timeline__date">2016.06 — 2017.06</p>
+        <h3 class="timeline__company">ææè®¾è®¡å·¥ä½å®¤</h3>
+        <p class="timeline__role">å®ä¹ è®¾è®¡å¸</p>
+        <p class="timeline__date">2016.06 â 2017.06</p>
         <p class="timeline__desc">
-          协助资深设计师完成品牌 VI 手册、海报设计及社交媒体视觉内容产出。
+          åå©èµæ·±è®¾è®¡å¸å®æåç VI æåãæµ·æ¥è®¾è®¡åç¤¾äº¤åªä½è§è§åå®¹äº§åºã
         </p>
       </div>
       -->
@@ -853,131 +846,136 @@ img {
 </section>
 
 <!-- ============================================================
-     Portfolio — 作品集
+     Portfolio â ä½åé
      ============================================================ -->
 <section class="section" id="portfolio">
   <div class="section__inner">
-    <h2 class="section__title fade-in">作品集</h2>
+    <h2 class="section__title fade-in">ä½åé</h2>
     <p class="section__subtitle fade-in">Portfolio</p>
 
-    <!-- 分类筛选标签 -->
+    <!-- åç±»ç­éæ ç­¾ -->
     <div class="portfolio__filters fade-in">
-      <button class="portfolio__filter active" data-filter="all">全部</button>
-      <button class="portfolio__filter" data-filter="brand">品牌设计</button>
-      <button class="portfolio__filter" data-filter="ui">UI 设计</button>
-      <button class="portfolio__filter" data-filter="illustration">插画</button>
+      <button class="portfolio__filter active" data-filter="all">å¨é¨</button>
+      <button class="portfolio__filter" data-filter="brand">åçè®¾è®¡</button>
+      <button class="portfolio__filter" data-filter="ui">UI è®¾è®¡</button>
+      <button class="portfolio__filter" data-filter="illustration">æç»</button>
     </div>
 
     <div class="portfolio__grid fade-in" id="portfolioGrid">
 
-      <!-- EDIT: 作品卡片 1 -->
+      <!-- EDIT: ä½åå¡ç 1 -->
       <div class="portfolio__card" data-category="brand" data-id="1">
         <div class="portfolio__image">
-          <!-- EDIT: 替换为真实图片 <img src="images/2未标题-2.jpg" alt="brxl"> -->
-          亚马逊A+
-          <div class="portfolio__overlay"><span>查看详情</span></div>
+          <!-- EDIT: æ¿æ¢å°é¢å¾ï¼æ¹ä¸ºä½ çå¾çè·¯å¾ -->
+          <img src="images/work1_thumb.jpg" alt="æ¶æ¼ªè¶é¥®">
+          <div class="portfolio__overlay"><span>æ¥çè¯¦æ</span></div>
         </div>
         <div class="portfolio__info">
-          <!-- EDIT: 分类标签 -->
-          <span class="portfolio__tag">亚马逊A+设计</span>
-          <!-- EDIT: 作品名 -->
-          <h3 class="portfolio__name">brxl — 亚马逊A+</h3>
-          <!-- EDIT: 作品简述 -->
-          <p class="portfolio__desc">新式茶饮品牌从命名、Logo 到全渠道视觉体系搭建。</p>
+          <!-- EDIT: åç±»æ ç­¾ -->
+          <span class="portfolio__tag">åçè®¾è®¡</span>
+          <!-- EDIT: ä½åå -->
+          <h3 class="portfolio__name">æ¶æ¼ªè¶é¥® â åçå¨æ¡</h3>
+          <!-- EDIT: ä½åç®è¿° -->
+          <p class="portfolio__desc">æ°å¼è¶é¥®åçä»å½åãLogo å°å¨æ¸ éè§è§ä½ç³»æ­å»ºã</p>
         </div>
       </div>
 
-      <!-- EDIT: 作品卡片 2 -->
+      <!-- EDIT: ä½åå¡ç 2 -->
       <div class="portfolio__card" data-category="ui" data-id="2">
         <div class="portfolio__image">
-          作品图片占位 2
-          <div class="portfolio__overlay"><span>查看详情</span></div>
+          <!-- EDIT: æ¿æ¢å°é¢å¾ -->
+          <img src="images/work2_thumb.jpg" alt="Flow å¥æ³ App">
+          <div class="portfolio__overlay"><span>æ¥çè¯¦æ</span></div>
         </div>
         <div class="portfolio__info">
-          <span class="portfolio__tag">UI 设计</span>
-          <h3 class="portfolio__name">Flow 冥想 App  redesign</h3>
-          <p class="portfolio__desc">心理健康类 App 的全面视觉升级与交互优化。</p>
+          <span class="portfolio__tag">UI è®¾è®¡</span>
+          <h3 class="portfolio__name">Flow å¥æ³ App  redesign</h3>
+          <p class="portfolio__desc">å¿çå¥åº·ç±» App çå¨é¢è§è§åçº§ä¸äº¤äºä¼åã</p>
         </div>
       </div>
 
-      <!-- EDIT: 作品卡片 3 -->
+      <!-- EDIT: ä½åå¡ç 3 -->
       <div class="portfolio__card" data-category="illustration" data-id="3">
         <div class="portfolio__image">
-          作品图片占位 3
-          <div class="portfolio__overlay"><span>查看详情</span></div>
+          <!-- EDIT: æ¿æ¢å°é¢å¾ -->
+          <img src="images/work3_thumb.jpg" alt="åå¸è®°å¿ç³»å">
+          <div class="portfolio__overlay"><span>æ¥çè¯¦æ</span></div>
         </div>
         <div class="portfolio__info">
-          <span class="portfolio__tag">插画</span>
-          <h3 class="portfolio__name">城市记忆系列插画</h3>
-          <p class="portfolio__desc">以上海街头场景为主题的手绘风格系列插画作品。</p>
+          <span class="portfolio__tag">æç»</span>
+          <h3 class="portfolio__name">åå¸è®°å¿ç³»åæç»</h3>
+          <p class="portfolio__desc">ä»¥ä¸æµ·è¡å¤´åºæ¯ä¸ºä¸»é¢çæç»é£æ ¼ç³»åæç»ä½åã</p>
         </div>
       </div>
 
-      <!-- EDIT: 作品卡片 4 -->
+      <!-- EDIT: ä½åå¡ç 4 -->
       <div class="portfolio__card" data-category="brand" data-id="4">
         <div class="portfolio__image">
-          作品图片占位 4
-          <div class="portfolio__overlay"><span>查看详情</span></div>
+          <!-- EDIT: æ¿æ¢å°é¢å¾ -->
+          <img src="images/work4_thumb.jpg" alt="æç»ç§æ">
+          <div class="portfolio__overlay"><span>æ¥çè¯¦æ</span></div>
         </div>
         <div class="portfolio__info">
-          <span class="portfolio__tag">品牌设计</span>
-          <h3 class="portfolio__name">星络科技 — 品牌升级</h3>
-          <p class="portfolio__desc">B2B 科技公司品牌视觉重塑，包含 Logo 与 VI 规范。</p>
+          <span class="portfolio__tag">åçè®¾è®¡</span>
+          <h3 class="portfolio__name">æç»ç§æ â åçåçº§</h3>
+          <p class="portfolio__desc">B2B ç§æå¬å¸åçè§è§éå¡ï¼åå« Logo ä¸ VI è§èã</p>
         </div>
       </div>
 
-      <!-- EDIT: 作品卡片 5 -->
+      <!-- EDIT: ä½åå¡ç 5 -->
       <div class="portfolio__card" data-category="ui" data-id="5">
         <div class="portfolio__image">
-          作品图片占位 5
-          <div class="portfolio__overlay"><span>查看详情</span></div>
+          <!-- EDIT: æ¿æ¢å°é¢å¾ -->
+          <img src="images/work5_thumb.jpg" alt="æ¦é£">
+          <div class="portfolio__overlay"><span>æ¥çè¯¦æ</span></div>
         </div>
         <div class="portfolio__info">
-          <span class="portfolio__tag">UI 设计</span>
-          <h3 class="portfolio__name">悦食 — 美食社交平台</h3>
-          <p class="portfolio__desc">从 0 到 1 的产品视觉设计，涵盖 iOS/Android 两端。</p>
+          <span class="portfolio__tag">UI è®¾è®¡</span>
+          <h3 class="portfolio__name">æ¦é£ â ç¾é£ç¤¾äº¤å¹³å°</h3>
+          <p class="portfolio__desc">ä» 0 å° 1 çäº§åè§è§è®¾è®¡ï¼æ¶µç iOS/Android ä¸¤ç«¯ã</p>
         </div>
       </div>
 
-      <!-- EDIT: 作品卡片 6 -->
+      <!-- EDIT: ä½åå¡ç 6 -->
       <div class="portfolio__card" data-category="illustration" data-id="6">
         <div class="portfolio__image">
-          作品图片占位 6
-          <div class="portfolio__overlay"><span>查看详情</span></div>
+          <!-- EDIT: æ¿æ¢å°é¢å¾ -->
+          <img src="images/work6_thumb.jpg" alt="äºååèæ°">
+          <div class="portfolio__overlay"><span>æ¥çè¯¦æ</span></div>
         </div>
         <div class="portfolio__info">
-          <span class="portfolio__tag">插画</span>
-          <h3 class="portfolio__name">二十四节气系列</h3>
-          <p class="portfolio__desc">以中国传统节气为灵感的系列商业插画作品。</p>
+          <span class="portfolio__tag">æç»</span>
+          <h3 class="portfolio__name">äºååèæ°ç³»å</h3>
+          <p class="portfolio__desc">ä»¥ä¸­å½ä¼ ç»èæ°ä¸ºçµæçç³»ååä¸æç»ä½åã</p>
         </div>
       </div>
 
-      <!-- EDIT: 作品卡片 7 (可选，取消注释即可启用) -->
+      <!-- EDIT: ä½åå¡ç 7 (å¯éï¼åæ¶æ³¨éå³å¯å¯ç¨) -->
       <!--
       <div class="portfolio__card" data-category="brand" data-id="7">
         <div class="portfolio__image">
-          作品图片占位 7
-          <div class="portfolio__overlay"><span>查看详情</span></div>
+          ä½åå¾çå ä½ 7
+          <div class="portfolio__overlay"><span>æ¥çè¯¦æ</span></div>
         </div>
         <div class="portfolio__info">
-          <span class="portfolio__tag">品牌设计</span>
-          <h3 class="portfolio__name">第七件作品</h3>
-          <p class="portfolio__desc">简短描述。</p>
+          <span class="portfolio__tag">åçè®¾è®¡</span>
+          <h3 class="portfolio__name">ç¬¬ä¸ä»¶ä½å</h3>
+          <p class="portfolio__desc">ç®ç­æè¿°ã</p>
         </div>
       </div>
       -->
 
-      <!-- EDIT: 作品卡片 8 (可选，取消注释即可启用) -->
+      <!-- EDIT: ä½åå¡ç 8 (å¯éï¼åæ¶æ³¨éå³å¯å¯ç¨) -->
       <!--
       <div class="portfolio__card" data-category="ui" data-id="8">
         <div class="portfolio__image">
-          作品图片占位 8
-          <div class="portfolio__overlay"><span>查看详情</span></div>
+          ä½åå¾çå ä½ 8
+          <div class="portfolio__overlay"><span>æ¥çè¯¦æ</span></div>
         </div>
         <div class="portfolio__info">
-          <span class="portfolio__tag">UI 设计</span>
-          <h3 class="portfolio__name">第八件作品</h3>
-          <p class="portfolio__desc">简短描述。</p>
+          <span class="portfolio__tag">UI è®¾è®¡</span>
+          <h3 class="portfolio__name">ç¬¬å«ä»¶ä½å</h3>
+          <p class="portfolio__desc">ç®ç­æè¿°ã</p>
         </div>
       </div>
       -->
@@ -987,12 +985,12 @@ img {
 </section>
 
 <!-- ============================================================
-     Lightbox — 灯箱模态框
+     Lightbox â ç¯ç®±æ¨¡ææ¡
      ============================================================ -->
 <div class="lightbox" id="lightbox">
   <div class="lightbox__content">
     <button class="lightbox__close" id="lightboxClose">&times;</button>
-    <div class="lightbox__image" id="lightboxImage">作品图片占位</div>
+    <div class="lightbox__image" id="lightboxImage">ä½åå¾çå ä½</div>
     <div class="lightbox__details">
       <span class="lightbox__tag" id="lightboxTag"></span>
       <h3 class="lightbox__name" id="lightboxName"></h3>
@@ -1002,32 +1000,32 @@ img {
 </div>
 
 <!-- ============================================================
-     Contact — 联系方式
+     Contact â èç³»æ¹å¼
      ============================================================ -->
 <section class="section contact" id="contact">
   <div class="section__inner">
-    <h2 class="section__title fade-in">联系方式</h2>
+    <h2 class="section__title fade-in">èç³»æ¹å¼</h2>
     <p class="section__subtitle fade-in">Contact</p>
 
     <div class="contact__grid fade-in">
 
-      <!-- EDIT: 修改邮箱 -->
+      <!-- EDIT: ä¿®æ¹é®ç®± -->
       <div class="contact__item">
         <div class="contact__icon">
-          <!-- 纯 CSS 邮件图标 -->
+          <!-- çº¯ CSS é®ä»¶å¾æ  -->
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4A90E2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="4" width="20" height="16" rx="2"/>
             <path d="M22 4L12 13L2 4"/>
           </svg>
         </div>
-        <p class="contact__label">邮箱</p>
+        <p class="contact__label">é®ç®±</p>
         <p class="contact__value">zhangyifan@example.com</p>
       </div>
 
-      <!-- EDIT: 修改微信 -->
+      <!-- EDIT: ä¿®æ¹å¾®ä¿¡ -->
       <div class="contact__item">
         <div class="contact__icon">
-          <!-- 纯 CSS 微信风格图标 -->
+          <!-- çº¯ CSS å¾®ä¿¡é£æ ¼å¾æ  -->
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4A90E2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M8 10.5C8 11.328 8.672 12 9.5 12S11 11.328 11 10.5 10.328 9 9.5 9 8 9.672 8 10.5z"/>
             <path d="M14 11.5C14 12.328 14.672 13 15.5 13S17 12.328 17 11.5 16.328 10 15.5 10 14 10.672 14 11.5z"/>
@@ -1036,24 +1034,24 @@ img {
             <circle cx="12" cy="12" r="10"/>
           </svg>
         </div>
-        <p class="contact__label">微信</p>
+        <p class="contact__label">å¾®ä¿¡</p>
         <p class="contact__value">zhangyifan_design</p>
       </div>
 
-      <!-- EDIT: 社交链接 — 替换为你的链接 -->
+      <!-- EDIT: ç¤¾äº¤é¾æ¥ â æ¿æ¢ä¸ºä½ çé¾æ¥ -->
       <div class="contact__item">
         <div class="contact__icon">
-          <!-- 纯 CSS 链接/地球图标 -->
+          <!-- çº¯ CSS é¾æ¥/å°çå¾æ  -->
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4A90E2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/>
             <path d="M2 12h20"/>
             <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
           </svg>
         </div>
-        <p class="contact__label">社交链接</p>
-        <!-- EDIT: 替换链接 -->
+        <p class="contact__label">ç¤¾äº¤é¾æ¥</p>
+        <!-- EDIT: æ¿æ¢é¾æ¥ -->
         <p class="contact__value">
-          <a href="#">Behance</a> &nbsp;/&nbsp; <a href="#">站酷</a>
+          <a href="#">Behance</a> &nbsp;/&nbsp; <a href="#">ç«é·</a>
         </p>
       </div>
 
@@ -1062,19 +1060,19 @@ img {
 </section>
 
 <!-- ============================================================
-     Footer — 页脚
+     Footer â é¡µè
      ============================================================ -->
 <footer class="footer">
-  <!-- EDIT: 修改版权姓名和年份 -->
-  <p>&copy; 2026 张逸凡. All Rights Reserved.</p>
+  <!-- EDIT: ä¿®æ¹çæå§ååå¹´ä»½ -->
+  <p>&copy; 2026 å¼ é¸å¡. All Rights Reserved.</p>
 </footer>
 
 <!-- ============================================================
-     JavaScript — 交互逻辑
+     JavaScript â äº¤äºé»è¾
      ============================================================ -->
 <script>
 (function() {
-  // ===== 汉堡菜单 =====
+  // ===== æ±å ¡èå =====
   var navToggle = document.getElementById('navToggle');
   var navLinks = document.getElementById('navLinks');
 
@@ -1083,7 +1081,7 @@ img {
     navLinks.classList.toggle('active');
   });
 
-  // 点击导航链接后关闭菜单
+  // ç¹å»å¯¼èªé¾æ¥åå³é­èå
   navLinks.querySelectorAll('a').forEach(function(link) {
     link.addEventListener('click', function() {
       navToggle.classList.remove('active');
@@ -1091,7 +1089,7 @@ img {
     });
   });
 
-  // ===== 滚动渐入动画 (Intersection Observer) =====
+  // ===== æ»å¨æ¸å¥å¨ç» (Intersection Observer) =====
   var fadeEls = document.querySelectorAll('.fade-in');
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
@@ -1104,13 +1102,13 @@ img {
 
   fadeEls.forEach(function(el) { observer.observe(el); });
 
-  // ===== 作品集分类筛选 =====
+  // ===== ä½åéåç±»ç­é =====
   var filterBtns = document.querySelectorAll('.portfolio__filter');
   var cards = document.querySelectorAll('.portfolio__card');
 
   filterBtns.forEach(function(btn) {
     btn.addEventListener('click', function() {
-      // 更新激活状态
+      // æ´æ°æ¿æ´»ç¶æ
       filterBtns.forEach(function(b) { b.classList.remove('active'); });
       btn.classList.add('active');
 
@@ -1126,7 +1124,7 @@ img {
     });
   });
 
-  // ===== 灯箱模态框 =====
+  // ===== ç¯ç®±æ¨¡ææ¡ =====
   var lightbox = document.getElementById('lightbox');
   var lightboxClose = document.getElementById('lightboxClose');
   var lightboxImage = document.getElementById('lightboxImage');
@@ -1134,44 +1132,52 @@ img {
   var lightboxName = document.getElementById('lightboxName');
   var lightboxDesc = document.getElementById('lightboxDesc');
 
-  // 作品数据映射（供灯箱使用）
+  // ä½åæ°æ®æ å°ï¼ä¾ç¯ç®±ä½¿ç¨ï¼
+  // EDIT: æ¯ä¸ªä½åçå®æ´å¤§å¾è·¯å¾ãåç±»æ ç­¾ãåç§°ãè¯¦ææè¿°
   var workData = {
     '1': {
-      tag: '跨境设计', name: 'brxl — 亚马逊A+',
-      desc: '新式茶饮品牌从命名、Logo 到全渠道视觉体系搭建。项目涵盖品牌策略、视觉识别系统（VIS）、包装设计、门店空间视觉规范及线上传播物料。以"水波纹"为核心视觉符号，融合东方美学与现代极简风格，帮助品牌在竞争激烈的茶饮市场中建立独特识别度。'
+      image: 'images/work1_full.jpg',
+      tag: 'åçè®¾è®¡', name: 'æ¶æ¼ªè¶é¥® â åçå¨æ¡',
+      desc: 'æ°å¼è¶é¥®åçä»å½åãLogo å°å¨æ¸ éè§è§ä½ç³»æ­å»ºãé¡¹ç®æ¶µçåçç­ç¥ãè§è§è¯å«ç³»ç»ï¼VISï¼ãåè£è®¾è®¡ãé¨åºç©ºé´è§è§è§èåçº¿ä¸ä¼ æ­ç©æãä»¥"æ°´æ³¢çº¹"ä¸ºæ ¸å¿è§è§ç¬¦å·ï¼èåä¸æ¹ç¾å­¦ä¸ç°ä»£æç®é£æ ¼ï¼å¸®å©åçå¨ç«äºæ¿ççè¶é¥®å¸åºä¸­å»ºç«ç¬ç¹è¯å«åº¦ã'
     },
     '2': {
-      tag: 'UI 设计', name: 'Flow 冥想 App redesign',
-      desc: '心理健康类 App 的全面视觉升级与交互优化。重新定义色彩系统与组件库，以柔和的渐变与微动效营造沉浸式冥想体验。优化导航结构与关键用户流程，将核心功能触达效率提升 40%。'
+      image: 'images/work2_full.jpg',
+      tag: 'UI è®¾è®¡', name: 'Flow å¥æ³ App redesign',
+      desc: 'å¿çå¥åº·ç±» App çå¨é¢è§è§åçº§ä¸äº¤äºä¼åãéæ°å®ä¹è²å½©ç³»ç»ä¸ç»ä»¶åºï¼ä»¥æåçæ¸åä¸å¾®å¨æè¥é æ²æµ¸å¼å¥æ³ä½éªãä¼åå¯¼èªç»æä¸å³é®ç¨æ·æµç¨ï¼å°æ ¸å¿åè½è§¦è¾¾æçæå 40%ã'
     },
     '3': {
-      tag: '插画', name: '城市记忆系列插画',
-      desc: '以上海街头场景为主题的手绘风格系列插画作品，共 12 幅。捕捉弄堂、外滩、法租界梧桐道等标志性场景的日常瞬间，采用水彩与数字绘画结合的混合技法，曾入选 2024 年上海国际插画展。'
+      image: 'images/work3_full.jpg',
+      tag: 'æç»', name: 'åå¸è®°å¿ç³»åæç»',
+      desc: 'ä»¥ä¸æµ·è¡å¤´åºæ¯ä¸ºä¸»é¢çæç»é£æ ¼ç³»åæç»ä½åï¼å± 12 å¹ãææå¼å ãå¤æ»©ãæ³ç§çæ¢§æ¡éç­æ å¿æ§åºæ¯çæ¥å¸¸ç¬é´ï¼éç¨æ°´å½©ä¸æ°å­ç»ç»ç»åçæ··åææ³ï¼æ¾å¥é 2024 å¹´ä¸æµ·å½éæç»å±ã'
     },
     '4': {
-      tag: '品牌设计', name: '星络科技 — 品牌升级',
-      desc: 'B2B 科技公司品牌视觉重塑项目。从 Logo 设计、色彩规范到全套 VI 手册输出，将原本零散的视觉资产统一为系统化的品牌语言。新标识以"连接"为核心概念，传达技术赋能商业的定位，上线后品牌认知度提升显著。'
+      image: 'images/work4_full.jpg',
+      tag: 'åçè®¾è®¡', name: 'æç»ç§æ â åçåçº§',
+      desc: 'B2B ç§æå¬å¸åçè§è§éå¡é¡¹ç®ãä» Logo è®¾è®¡ãè²å½©è§èå°å¨å¥ VI æåè¾åºï¼å°åæ¬é¶æ£çè§è§èµäº§ç»ä¸ä¸ºç³»ç»åçåçè¯­è¨ãæ°æ è¯ä»¥"è¿æ¥"ä¸ºæ ¸å¿æ¦å¿µï¼ä¼ è¾¾ææ¯èµè½åä¸çå®ä½ï¼ä¸çº¿ååçè®¤ç¥åº¦æåæ¾èã'
     },
     '5': {
-      tag: 'UI 设计', name: '悦食 — 美食社交平台',
-      desc: '从 0 到 1 的产品视觉设计，涵盖 iOS/Android 两端。以"食欲感"为设计关键词，运用高饱和度暖色调与大面积食物图片呈现视觉冲击力。设计完整的 Design System，包含 60+ 组件与交互规范。'
+      image: 'images/work5_full.jpg',
+      tag: 'UI è®¾è®¡', name: 'æ¦é£ â ç¾é£ç¤¾äº¤å¹³å°',
+      desc: 'ä» 0 å° 1 çäº§åè§è§è®¾è®¡ï¼æ¶µç iOS/Android ä¸¤ç«¯ãä»¥"é£æ¬²æ"ä¸ºè®¾è®¡å³é®è¯ï¼è¿ç¨é«é¥±ååº¦æè²è°ä¸å¤§é¢ç§¯é£ç©å¾çåç°è§è§å²å»åãè®¾è®¡å®æ´ç Design Systemï¼åå« 60+ ç»ä»¶ä¸äº¤äºè§èã'
     },
     '6': {
-      tag: '插画', name: '二十四节气系列',
-      desc: '以中国传统节气为灵感的系列商业插画作品。每幅作品融合对应的物候特征与民俗元素，采用现代扁平化风格重新诠释传统文化符号。该系列已被多个文化类品牌授权用于产品包装与周边开发。'
+      image: 'images/work6_full.jpg',
+      tag: 'æç»', name: 'äºååèæ°ç³»å',
+      desc: 'ä»¥ä¸­å½ä¼ ç»èæ°ä¸ºçµæçç³»ååä¸æç»ä½åãæ¯å¹ä½åèåå¯¹åºçç©åç¹å¾ä¸æ°ä¿åç´ ï¼éç¨ç°ä»£æå¹³åé£æ ¼éæ°è¯ éä¼ ç»æåç¬¦å·ãè¯¥ç³»åå·²è¢«å¤ä¸ªæåç±»åçææç¨äºäº§ååè£ä¸å¨è¾¹å¼åã'
     }
   };
 
-  // 绑定卡片点击事件
+  // ç»å®å¡çç¹å»äºä»¶
   cards.forEach(function(card) {
     card.addEventListener('click', function() {
       var id = card.getAttribute('data-id');
       var data = workData[id];
       if (!data) return;
 
-      // 复制卡片图片区域内容到灯箱
-      var imgArea = card.querySelector('.portfolio__image');
-      lightboxImage.innerHTML = imgArea ? imgArea.innerHTML.replace(/<div class="portfolio__overlay".*?<\/div>/g, '') : '作品图片占位';
+      // æ¾ç¤ºå®æ´å¤§å¾ï¼éå°é¢ç¼©ç¥å¾ï¼
+      lightboxImage.innerHTML = data.image
+        ? '<img src="' + data.image + '" alt="' + data.name + '">'
+        : 'ä½åå¾çå ä½';
       lightboxTag.textContent = data.tag;
       lightboxName.textContent = data.name;
       lightboxDesc.textContent = data.desc;
@@ -1181,7 +1187,7 @@ img {
     });
   });
 
-  // 关闭灯箱
+  // å³é­ç¯ç®±
   function closeLightbox() {
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
@@ -1200,61 +1206,61 @@ img {
 
 <!--
   ============================================================
-  编辑指南 (Editor Guide)
+  ç¼è¾æå (Editor Guide)
   ============================================================
 
-  本文件是一个完整的视觉设计师作品集网站模板，所有内容均可替换。
-  以下是按板块整理的修改指引，搜索 "EDIT:" 注释可快速定位所有编辑点。
+  æ¬æä»¶æ¯ä¸ä¸ªå®æ´çè§è§è®¾è®¡å¸ä½åéç½ç«æ¨¡æ¿ï¼ææåå®¹åå¯æ¿æ¢ã
+  ä»¥ä¸æ¯ææ¿åæ´ççä¿®æ¹æå¼ï¼æç´¢ "EDIT:" æ³¨éå¯å¿«éå®ä½ææç¼è¾ç¹ã
 
-  【全局配色】
-  - 搜索 ":root {" 找到 CSS 变量区，修改颜色值即可全局生效
-  - --color-accent: 主点缀色（默认电光蓝 #4A90E2）
-  - --color-bg: 背景色 / --color-text: 正文色
+  ãå¨å±éè²ã
+  - æç´¢ ":root {" æ¾å° CSS åéåºï¼ä¿®æ¹é¢è²å¼å³å¯å¨å±çæ
+  - --color-accent: ä¸»ç¹ç¼è²ï¼é»è®¤çµåè #4A90E2ï¼
+  - --color-bg: èæ¯è² / --color-text: æ­£æè²
 
-  【导航栏】
-  - Logo/姓名: 搜索 "nav__logo" → 修改 "Designer" 为你的名字
-  - 导航项: 在 <ul class="nav__links"> 中增删 <li>
+  ãå¯¼èªæ ã
+  - Logo/å§å: æç´¢ "nav__logo" â ä¿®æ¹ "Designer" ä¸ºä½ çåå­
+  - å¯¼èªé¡¹: å¨ <ul class="nav__links"> ä¸­å¢å  <li>
 
-  【Hero 区】
-  - 姓名: 搜索 "hero__name" → 修改 "张逸凡"
-  - 头衔: 搜索 "hero__role" → 修改
-  - 简介: 搜索 "hero__tagline" → 修改
-  - CTA 按钮: 搜索 "hero__cta" → 修改文字和链接
+  ãHero åºã
+  - å§å: æç´¢ "hero__name" â ä¿®æ¹ "å¼ é¸å¡"
+  - å¤´è¡: æç´¢ "hero__role" â ä¿®æ¹
+  - ç®ä»: æç´¢ "hero__tagline" â ä¿®æ¹
+  - CTA æé®: æç´¢ "hero__cta" â ä¿®æ¹æå­åé¾æ¥
 
-  【关于我】
-  - 头像: 搜索 "about__avatar" → 将占位 <div> 替换为 <img src="头像路径">
-  - 简介文字: 搜索 "about__text" → 修改 <p> 中的内容
+  ãå³äºæã
+  - å¤´å: æç´¢ "about__avatar" â å°å ä½ <div> æ¿æ¢ä¸º <img src="å¤´åè·¯å¾">
+  - ç®ä»æå­: æç´¢ "about__text" â ä¿®æ¹ <p> ä¸­çåå®¹
 
-  【工作经历】
-  - 搜索 "timeline__item" 找到每个经历节点
-  - 每条包含: timeline__company(公司) / timeline__role(职位) / timeline__date(时间) / timeline__desc(描述)
-  - 第 4 个节点默认被注释隐藏，取消注释即可启用
+  ãå·¥ä½ç»åã
+  - æç´¢ "timeline__item" æ¾å°æ¯ä¸ªç»åèç¹
+  - æ¯æ¡åå«: timeline__company(å¬å¸) / timeline__role(èä½) / timeline__date(æ¶é´) / timeline__desc(æè¿°)
+  - ç¬¬ 4 ä¸ªèç¹é»è®¤è¢«æ³¨ééèï¼åæ¶æ³¨éå³å¯å¯ç¨
 
-  【作品集】
-  - 每个作品卡片在 .portfolio__card 中
-  - 修改图片: 将占位文字替换为 <img src="图片路径" alt="作品名">
-  - 修改信息: .portfolio__tag(标签) / .portfolio__name(名称) / .portfolio__desc(描述)
-  - data-category 属性: brand / ui / illustration，决定该卡片属于哪个筛选分类
-  - data-id: 关联灯箱详情数据，需与 workData 对象中的 key 对应
-  - 灯箱数据: 搜索 "workData = {" 在 JS 中修改每个作品在灯箱中的详细描述
-  - 第 7/8 个卡片默认被注释隐藏，取消注释即可启用，同时需在 workData 中添加对应的数据
+  ãä½åéã
+  - æ¯ä¸ªä½åå¡çå¨ .portfolio__card ä¸­
+  - ä¿®æ¹å¾ç: å°å ä½æå­æ¿æ¢ä¸º <img src="å¾çè·¯å¾" alt="ä½åå">
+  - ä¿®æ¹ä¿¡æ¯: .portfolio__tag(æ ç­¾) / .portfolio__name(åç§°) / .portfolio__desc(æè¿°)
+  - data-category å±æ§: brand / ui / illustrationï¼å³å®è¯¥å¡çå±äºåªä¸ªç­éåç±»
+  - data-id: å³èç¯ç®±è¯¦ææ°æ®ï¼éä¸ workData å¯¹è±¡ä¸­ç key å¯¹åº
+  - ç¯ç®±æ°æ®: æç´¢ "workData = {" å¨ JS ä¸­ä¿®æ¹æ¯ä¸ªä½åå¨ç¯ç®±ä¸­çè¯¦ç»æè¿°
+  - ç¬¬ 7/8 ä¸ªå¡çé»è®¤è¢«æ³¨ééèï¼åæ¶æ³¨éå³å¯å¯ç¨ï¼åæ¶éå¨ workData ä¸­æ·»å å¯¹åºçæ°æ®
 
-  【联系方式】
-  - 邮箱: 搜索 "zhangyifan@example.com" 替换
-  - 微信: 搜索 "zhangyifan_design" 替换
-  - 社交链接: 搜索 "Behance" 和 "站酷" 替换为你的真实链接
+  ãèç³»æ¹å¼ã
+  - é®ç®±: æç´¢ "zhangyifan@example.com" æ¿æ¢
+  - å¾®ä¿¡: æç´¢ "zhangyifan_design" æ¿æ¢
+  - ç¤¾äº¤é¾æ¥: æç´¢ "Behance" å "ç«é·" æ¿æ¢ä¸ºä½ ççå®é¾æ¥
 
-  【页脚】
-  - 搜索 "张逸凡" 替换为你的名字
-  - 修改年份
+  ãé¡µèã
+  - æç´¢ "å¼ é¸å¡" æ¿æ¢ä¸ºä½ çåå­
+  - ä¿®æ¹å¹´ä»½
 
-  【添加新板块】
-  - 参考现有 section 结构，复制修改即可
-  - 在导航栏添加对应的锚点链接
+  ãæ·»å æ°æ¿åã
+  - åèç°æ section ç»æï¼å¤å¶ä¿®æ¹å³å¯
+  - å¨å¯¼èªæ æ·»å å¯¹åºçéç¹é¾æ¥
 
-  【部署】
-  - 本文件为零外部依赖纯静态页面，可直接用浏览器打开
-  - 或部署到任何静态托管服务（GitHub Pages、Vercel、Netlify 等）
+  ãé¨ç½²ã
+  - æ¬æä»¶ä¸ºé¶å¤é¨ä¾èµçº¯éæé¡µé¢ï¼å¯ç´æ¥ç¨æµè§å¨æå¼
+  - æé¨ç½²å°ä»»ä½éææç®¡æå¡ï¼GitHub PagesãVercelãNetlify ç­ï¼
 
   ============================================================
 -->
