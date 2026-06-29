@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>视觉设计师作品集</title>
+<style>
+/* ============================================================
+   CSS Variables — 统一配色管理，修改此处即可全局生效
+   ============================================================ */
+:root {
+  --color-bg: #0d0d0d;
+  --color-surface: #1a1a1a;
+  --color-surface-light: #242424;
+  --color-text: #e0e0e0;
+  --color-text-muted: #888;
+  --color-accent: #4A90E2;
+  --color-accent-glow: rgba(74, 144, 226, 0.25);
+  --color-border: #2a2a2a;
+  --color-tag-bg: #1f1f1f;
+  --color-tag-text: #aaa;
+  --color-tag-active-bg: var(--color-accent);
+  --color-tag-active-text: #fff;
+  --font-heading: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  --max-width: 1200px;
+  --nav-height: 64px;
+  --radius: 8px;
+  --radius-lg: 16px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================================
+   Reset & Base
+   ============================================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover { color: #6db3f5; }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ============================================================
+   Navigation — 固定顶部导航
+   ============================================================ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background: rgba(13, 13, 13, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav__inner {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* EDIT: 修改 Logo/姓名 */
+.nav__logo {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 1px;
+}
+
+.nav__links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav__links a {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color var(--transition);
+}
+.nav__links a:hover { color: var(--color-accent); }
+
+/* 汉堡菜单按钮 */
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav__toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.nav__toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__toggle.active span:nth-child(2) { opacity: 0; }
+.nav__toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  .nav__links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--color-surface);
+    flex-direction: column;
+    gap: 0;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-border);
+    transform: translateY(-120%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+  }
+  .nav__links.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav__links li { text-align: center; }
+  .nav__links a {
+    display: block;
+    padding: 14px 24px;
+    font-size: 1rem;
+  }
+  .nav__toggle { display: flex; }
+}
+
+/* ============================================================
+   Section Common
+   ============================================================ */
+.section {
+  padding: 100px 24px;
+}
+
+.section__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section__title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.section__subtitle {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 60px;
+}
+
+/* 滚动渐入动画 */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   Hero — 首屏全屏展示
+   ============================================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+  padding-top: var(--nav-height);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 背景光晕装饰 */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* EDIT: 修改设计师姓名 */
+.hero__name {
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+/* EDIT: 修改职位头衔 */
+.hero__role {
+  font-size: 1.2rem;
+  color: var(--color-accent);
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+/* EDIT: 修改一句话简介 */
+.hero__tagline {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  max-width: 520px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+}
+
+/* CTA 按钮 */
+.hero__cta {
+  display: inline-block;
+  padding: 14px 40px;
+  border: 1.5px solid var(--color-accent);
+  color: var(--color-accent);
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all var(--transition);
+  position: relative;
+}
+.hero__cta:hover {
+  background: var(--color-accent);
+  color: #fff;
+  box-shadow: 0 0 30px var(--color-accent-glow);
+}
+
+/* ============================================================
+   About — 关于我
+   ============================================================ */
+.about {
+  background: var(--color-surface);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* EDIT: 头像区域 — 替换为真实头像图片 */
+.about__avatar {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: var(--color-surface-light);
+  border: 2px dashed var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin: 0 auto;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.about__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* EDIT: 个人简介文字 */
+.about__text p {
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+  line-height: 1.9;
+  margin-bottom: 18px;
+}
+.about__text p:last-child { margin-bottom: 0; }
+
+@media (max-width: 768px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  .about__avatar { width: 180px; height: 180px; }
+}
+
+/* ============================================================
+   Experience — 工作经历时间线
+   ============================================================ */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+/* 左侧竖线 */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-border);
+}
+
+.timeline__item {
+  position: relative;
+  margin-bottom: 48px;
+  padding-left: 32px;
+}
+.timeline__item:last-child { margin-bottom: 0; }
+
+/* 圆点节点 */
+.timeline__item::before {
+  content: '';
+  position: absolute;
+  left: -27px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  border: 2px solid var(--color-bg);
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+/* EDIT: 公司/机构名称 */
+.timeline__company {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+/* EDIT: 职位 */
+.timeline__role {
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+/* EDIT: 时间区间 */
+.timeline__date {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* EDIT: 工作描述 */
+.timeline__desc {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .timeline { padding-left: 28px; }
+  .timeline::before { left: 11px; }
+  .timeline__item { padding-left: 24px; }
+  .timeline__item::before { left: -19px; width: 10px; height: 10px; }
+}
+
+/* ============================================================
+   Portfolio — 作品集
+   ============================================================ */
+.portfolio__filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.portfolio__filter {
+  padding: 8px 22px;
+  border: 1px solid var(--color-border);
+  border-radius: 50px;
+  background: var(--color-tag-bg);
+  color: var(--color-tag-text);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: var(--font-body);
+}
+.portfolio__filter:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+.portfolio__filter.active {
+  background: var(--color-tag-active-bg);
+  border-color: var(--color-tag-active-bg);
+  color: var(--color-tag-active-text);
+}
+
+.portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.portfolio__card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  border: 1px solid var(--color-border);
+}
+.portfolio__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+/* 图片占位区 */
+.portfolio__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--color-surface-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  overflow: hidden;
+  position: relative;
+}
+.portfolio__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.portfolio__card:hover .portfolio__image img { transform: scale(1.06); }
+
+/* 遮罩层 */
+.portfolio__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.portfolio__card:hover .portfolio__overlay { opacity: 1; }
+
+.portfolio__overlay span {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 8px 20px;
+  border-radius: 50px;
+}
+
+.portfolio__info {
+  padding: 20px;
+}
+
+/* EDIT: 分类标签 */
+.portfolio__tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  color: var(--color-accent);
+  background: rgba(74, 144, 226, 0.1);
+  padding: 3px 10px;
+  border-radius: 50px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* EDIT: 作品名 */
+.portfolio__name {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* EDIT: 作品简述 */
+.portfolio__desc {
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+/* 隐藏类 — 用于筛选 */
+.portfolio__card.hidden { display: none; }
+
+@media (max-width: 1024px) {
+  .portfolio__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .portfolio__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   Lightbox — 灯箱模态框
+   ============================================================ */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+  padding: 24px;
+}
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox__content {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: lightboxIn 0.3s ease;
+}
+@keyframes lightboxIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+  z-index: 10;
+}
+.lightbox__close:hover { background: rgba(255,255,255,0.25); }
+
+.lightbox__image {
+  width: 100%;
+  background: var(--color-surface-light);
+}
+.lightbox__image img {
+  width: 100%;
+  display: block;
+}
+
+.lightbox__details { padding: 32px; }
+.lightbox__tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  color: var(--color-accent);
+  background: rgba(74, 144, 226, 0.1);
+  padding: 3px 10px;
+  border-radius: 50px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+.lightbox__name {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.lightbox__desc {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* ============================================================
+   Contact — 联系方式
+   ============================================================ */
+.contact {
+  background: var(--color-surface);
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+
+.contact__item {
+  background: var(--color-surface-light);
+  border-radius: var(--radius-lg);
+  padding: 40px 24px;
+  transition: transform var(--transition), box-shadow var(--transition);
+  border: 1px solid transparent;
+}
+.contact__item:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-border);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+/* 纯 CSS 图标 */
+.contact__icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact__label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+/* EDIT: 联系方式内容 */
+.contact__value {
+  font-size: 1rem;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+@media (max-width: 768px) {
+  .contact__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   Footer — 页脚
+   ============================================================ */
+.footer {
+  text-align: center;
+  padding: 40px 24px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     Navigation — 导航栏
+     ============================================================ -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <!-- EDIT: 修改 Logo / 设计师姓名 -->
+    <a href="#hero" class="nav__logo">Designer</a>
+
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#about">关于我</a></li>
+      <li><a href="#experience">经历</a></li>
+      <li><a href="#portfolio">作品</a></li>
+      <li><a href="#contact">联系</a></li>
+    </ul>
+
+    <button class="nav__toggle" id="navToggle" aria-label="菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============================================================
+     Hero — 首屏
+     ============================================================ -->
+<section class="hero" id="hero">
+  <div>
+    <!-- EDIT: 修改设计师姓名 -->
+    <h1 class="hero__name">张逸凡</h1>
+    <!-- EDIT: 修改职位头衔 -->
+    <p class="hero__role">资深视觉设计师</p>
+    <!-- EDIT: 修改一句话简介 -->
+    <p class="hero__tagline">
+      专注品牌设计与数字体验，7 年行业经验，擅长将商业策略转化为视觉语言。
+    </p>
+    <!-- EDIT: 修改 CTA 链接或文案 -->
+    <a href="#portfolio" class="hero__cta">查看作品集</a>
+  </div>
+</section>
+
+<!-- ============================================================
+     About — 关于我
+     ============================================================ -->
+<section class="section about" id="about">
+  <div class="section__inner">
+    <h2 class="section__title fade-in">关于我</h2>
+    <p class="section__subtitle fade-in">About Me</p>
+
+    <div class="about__grid fade-in">
+      <!-- EDIT: 替换头像 — 将 <div> 改为 <img src="你的头像路径" alt="头像"> -->
+      <div class="about__avatar">
+        <!-- 占位文字，替换为 <img> 后删除此文字 -->
+        头像占位
+      </div>
+
+      <div class="about__text">
+        <!-- EDIT: 修改个人简介 -->
+        <p>
+          我是张逸凡，一名驻扎在上海的资深视觉设计师，拥有 7 年品牌设计与数字产品设计经验。
+          曾服务于多家知名互联网公司与创意热店，主导过多个百万级用户量产品的视觉体系搭建。
+        </p>
+        <p>
+          我的设计哲学是"少即是多"——追求极致的简洁与功能性平衡，相信好的设计应当让信息传达毫不费力。
+          擅长领域涵盖品牌视觉系统、UI/UX 设计、插画与动效设计。
+        </p>
+        <p>
+          工作之余，我热爱摄影与旅行，这些爱好持续滋养着我的审美视角。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Experience — 工作经历
+     ============================================================ -->
+<section class="section" id="experience">
+  <div class="section__inner">
+    <h2 class="section__title fade-in">工作经历</h2>
+    <p class="section__subtitle fade-in">Experience</p>
+
+    <div class="timeline fade-in">
+
+      <!-- EDIT: 经历节点 1 -->
+      <div class="timeline__item">
+        <!-- EDIT: 公司名称 -->
+        <h3 class="timeline__company">字节跳动</h3>
+        <!-- EDIT: 职位 -->
+        <p class="timeline__role">高级视觉设计师</p>
+        <!-- EDIT: 时间 -->
+        <p class="timeline__date">2022.03 — 至今</p>
+        <!-- EDIT: 工作描述 -->
+        <p class="timeline__desc">
+          负责抖音电商业务线品牌视觉体系搭建，主导设计系统从 0 到 1 建设，覆盖运营活动、营销物料、直播视觉规范。带领 4 人设计小组，年度项目交付量超 200 个。
+        </p>
+      </div>
+
+      <!-- EDIT: 经历节点 2 -->
+      <div class="timeline__item">
+        <h3 class="timeline__company">网易</h3>
+        <p class="timeline__role">视觉设计师</p>
+        <p class="timeline__date">2019.06 — 2022.02</p>
+        <p class="timeline__desc">
+          负责网易云音乐品牌营销视觉设计，主导多个 S 级运营活动主视觉创作。参与 8.0 大版本品牌升级项目，重新定义视觉语言规范。
+        </p>
+      </div>
+
+      <!-- EDIT: 经历节点 3 -->
+      <div class="timeline__item">
+        <h3 class="timeline__company">W 创意热店</h3>
+        <p class="timeline__role">平面设计师</p>
+        <p class="timeline__date">2017.07 — 2019.05</p>
+        <p class="timeline__desc">
+          服务快消、美妆、科技行业客户，包括 Nike、L'Oréal、华为等品牌。负责品牌 Campaign 主视觉、社交媒体视觉内容、线下活动物料设计。
+        </p>
+      </div>
+
+      <!-- EDIT: 如需第 4 个经历节点，取消下方注释 -->
+      <!--
+      <div class="timeline__item">
+        <h3 class="timeline__company">某某设计工作室</h3>
+        <p class="timeline__role">实习设计师</p>
+        <p class="timeline__date">2016.06 — 2017.06</p>
+        <p class="timeline__desc">
+          协助资深设计师完成品牌 VI 手册、海报设计及社交媒体视觉内容产出。
+        </p>
+      </div>
+      -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Portfolio — 作品集
+     ============================================================ -->
+<section class="section" id="portfolio">
+  <div class="section__inner">
+    <h2 class="section__title fade-in">作品集</h2>
+    <p class="section__subtitle fade-in">Portfolio</p>
+
+    <!-- 分类筛选标签 -->
+    <div class="portfolio__filters fade-in">
+      <button class="portfolio__filter active" data-filter="all">全部</button>
+      <button class="portfolio__filter" data-filter="brand">品牌设计</button>
+      <button class="portfolio__filter" data-filter="ui">UI 设计</button>
+      <button class="portfolio__filter" data-filter="illustration">插画</button>
+    </div>
+
+    <div class="portfolio__grid fade-in" id="portfolioGrid">
+
+      <!-- EDIT: 作品卡片 1 -->
+      <div class="portfolio__card" data-category="brand" data-id="1">
+        <div class="portfolio__image">
+          <!-- EDIT: 替换封面图，改为你的图片路径 -->
+          <img src="images/work1_thumb.jpg" alt="涟漪茶饮">
+          <div class="portfolio__overlay"><span>查看详情</span></div>
+        </div>
+        <div class="portfolio__info">
+          <!-- EDIT: 分类标签 -->
+          <span class="portfolio__tag">品牌设计</span>
+          <!-- EDIT: 作品名 -->
+          <h3 class="portfolio__name">涟漪茶饮 — 品牌全案</h3>
+          <!-- EDIT: 作品简述 -->
+          <p class="portfolio__desc">新式茶饮品牌从命名、Logo 到全渠道视觉体系搭建。</p>
+        </div>
+      </div>
+
+      <!-- EDIT: 作品卡片 2 -->
+      <div class="portfolio__card" data-category="ui" data-id="2">
+        <div class="portfolio__image">
+          <!-- EDIT: 替换封面图 -->
+          <img src="images/work2_thumb.jpg" alt="Flow 冥想 App">
+          <div class="portfolio__overlay"><span>查看详情</span></div>
+        </div>
+        <div class="portfolio__info">
+          <span class="portfolio__tag">UI 设计</span>
+          <h3 class="portfolio__name">Flow 冥想 App  redesign</h3>
+          <p class="portfolio__desc">心理健康类 App 的全面视觉升级与交互优化。</p>
+        </div>
+      </div>
+
+      <!-- EDIT: 作品卡片 3 -->
+      <div class="portfolio__card" data-category="illustration" data-id="3">
+        <div class="portfolio__image">
+          <!-- EDIT: 替换封面图 -->
+          <img src="images/work3_thumb.jpg" alt="城市记忆系列">
+          <div class="portfolio__overlay"><span>查看详情</span></div>
+        </div>
+        <div class="portfolio__info">
+          <span class="portfolio__tag">插画</span>
+          <h3 class="portfolio__name">城市记忆系列插画</h3>
+          <p class="portfolio__desc">以上海街头场景为主题的手绘风格系列插画作品。</p>
+        </div>
+      </div>
+
+      <!-- EDIT: 作品卡片 4 -->
+      <div class="portfolio__card" data-category="brand" data-id="4">
+        <div class="portfolio__image">
+          <!-- EDIT: 替换封面图 -->
+          <img src="images/work4_thumb.jpg" alt="星络科技">
+          <div class="portfolio__overlay"><span>查看详情</span></div>
+        </div>
+        <div class="portfolio__info">
+          <span class="portfolio__tag">品牌设计</span>
+          <h3 class="portfolio__name">星络科技 — 品牌升级</h3>
+          <p class="portfolio__desc">B2B 科技公司品牌视觉重塑，包含 Logo 与 VI 规范。</p>
+        </div>
+      </div>
+
+      <!-- EDIT: 作品卡片 5 -->
+      <div class="portfolio__card" data-category="ui" data-id="5">
+        <div class="portfolio__image">
+          <!-- EDIT: 替换封面图 -->
+          <img src="images/work5_thumb.jpg" alt="悦食">
+          <div class="portfolio__overlay"><span>查看详情</span></div>
+        </div>
+        <div class="portfolio__info">
+          <span class="portfolio__tag">UI 设计</span>
+          <h3 class="portfolio__name">悦食 — 美食社交平台</h3>
+          <p class="portfolio__desc">从 0 到 1 的产品视觉设计，涵盖 iOS/Android 两端。</p>
+        </div>
+      </div>
+
+      <!-- EDIT: 作品卡片 6 -->
+      <div class="portfolio__card" data-category="illustration" data-id="6">
+        <div class="portfolio__image">
+          <!-- EDIT: 替换封面图 -->
+          <img src="images/work6_thumb.jpg" alt="二十四节气">
+          <div class="portfolio__overlay"><span>查看详情</span></div>
+        </div>
+        <div class="portfolio__info">
+          <span class="portfolio__tag">插画</span>
+          <h3 class="portfolio__name">二十四节气系列</h3>
+          <p class="portfolio__desc">以中国传统节气为灵感的系列商业插画作品。</p>
+        </div>
+      </div>
+
+      <!-- EDIT: 作品卡片 7 (可选，取消注释即可启用) -->
+      <!--
+      <div class="portfolio__card" data-category="brand" data-id="7">
+        <div class="portfolio__image">
+          作品图片占位 7
+          <div class="portfolio__overlay"><span>查看详情</span></div>
+        </div>
+        <div class="portfolio__info">
+          <span class="portfolio__tag">品牌设计</span>
+          <h3 class="portfolio__name">第七件作品</h3>
+          <p class="portfolio__desc">简短描述。</p>
+        </div>
+      </div>
+      -->
+
+      <!-- EDIT: 作品卡片 8 (可选，取消注释即可启用) -->
+      <!--
+      <div class="portfolio__card" data-category="ui" data-id="8">
+        <div class="portfolio__image">
+          作品图片占位 8
+          <div class="portfolio__overlay"><span>查看详情</span></div>
+        </div>
+        <div class="portfolio__info">
+          <span class="portfolio__tag">UI 设计</span>
+          <h3 class="portfolio__name">第八件作品</h3>
+          <p class="portfolio__desc">简短描述。</p>
+        </div>
+      </div>
+      -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Lightbox — 灯箱模态框
+     ============================================================ -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox__content">
+    <button class="lightbox__close" id="lightboxClose">&times;</button>
+    <div class="lightbox__image" id="lightboxImage">作品图片占位</div>
+    <div class="lightbox__details">
+      <span class="lightbox__tag" id="lightboxTag"></span>
+      <h3 class="lightbox__name" id="lightboxName"></h3>
+      <p class="lightbox__desc" id="lightboxDesc"></p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     Contact — 联系方式
+     ============================================================ -->
+<section class="section contact" id="contact">
+  <div class="section__inner">
+    <h2 class="section__title fade-in">联系方式</h2>
+    <p class="section__subtitle fade-in">Contact</p>
+
+    <div class="contact__grid fade-in">
+
+      <!-- EDIT: 修改邮箱 -->
+      <div class="contact__item">
+        <div class="contact__icon">
+          <!-- 纯 CSS 邮件图标 -->
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4A90E2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="M22 4L12 13L2 4"/>
+          </svg>
+        </div>
+        <p class="contact__label">邮箱</p>
+        <p class="contact__value">zhangyifan@example.com</p>
+      </div>
+
+      <!-- EDIT: 修改微信 -->
+      <div class="contact__item">
+        <div class="contact__icon">
+          <!-- 纯 CSS 微信风格图标 -->
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4A90E2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 10.5C8 11.328 8.672 12 9.5 12S11 11.328 11 10.5 10.328 9 9.5 9 8 9.672 8 10.5z"/>
+            <path d="M14 11.5C14 12.328 14.672 13 15.5 13S17 12.328 17 11.5 16.328 10 15.5 10 14 10.672 14 11.5z"/>
+            <path d="M8.5 14C6.015 14 4 15.79 4 18h9"/>
+            <path d="M15 14c2.485 0 4.5 1.79 4.5 4H20c0-3.314-2.462-6-5.5-6"/>
+            <circle cx="12" cy="12" r="10"/>
+          </svg>
+        </div>
+        <p class="contact__label">微信</p>
+        <p class="contact__value">zhangyifan_design</p>
+      </div>
+
+      <!-- EDIT: 社交链接 — 替换为你的链接 -->
+      <div class="contact__item">
+        <div class="contact__icon">
+          <!-- 纯 CSS 链接/地球图标 -->
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4A90E2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20"/>
+            <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+          </svg>
+        </div>
+        <p class="contact__label">社交链接</p>
+        <!-- EDIT: 替换链接 -->
+        <p class="contact__value">
+          <a href="#">Behance</a> &nbsp;/&nbsp; <a href="#">站酷</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Footer — 页脚
+     ============================================================ -->
+<footer class="footer">
+  <!-- EDIT: 修改版权姓名和年份 -->
+  <p>&copy; 2026 张逸凡. All Rights Reserved.</p>
+</footer>
+
+<!-- ============================================================
+     JavaScript — 交互逻辑
+     ============================================================ -->
+<script>
+(function() {
+  // ===== 汉堡菜单 =====
+  var navToggle = document.getElementById('navToggle');
+  var navLinks = document.getElementById('navLinks');
+
+  navToggle.addEventListener('click', function() {
+    navToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  // 点击导航链接后关闭菜单
+  navLinks.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      navToggle.classList.remove('active');
+      navLinks.classList.remove('active');
+    });
+  });
+
+  // ===== 滚动渐入动画 (Intersection Observer) =====
+  var fadeEls = document.querySelectorAll('.fade-in');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+
+  fadeEls.forEach(function(el) { observer.observe(el); });
+
+  // ===== 作品集分类筛选 =====
+  var filterBtns = document.querySelectorAll('.portfolio__filter');
+  var cards = document.querySelectorAll('.portfolio__card');
+
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      // 更新激活状态
+      filterBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      var filter = btn.getAttribute('data-filter');
+
+      cards.forEach(function(card) {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // ===== 灯箱模态框 =====
+  var lightbox = document.getElementById('lightbox');
+  var lightboxClose = document.getElementById('lightboxClose');
+  var lightboxImage = document.getElementById('lightboxImage');
+  var lightboxTag = document.getElementById('lightboxTag');
+  var lightboxName = document.getElementById('lightboxName');
+  var lightboxDesc = document.getElementById('lightboxDesc');
+
+  // 作品数据映射（供灯箱使用）
+  // EDIT: 每个作品的完整大图路径、分类标签、名称、详情描述
+  var workData = {
+    '1': {
+      image: 'images/work1_full.jpg',
+      tag: '品牌设计', name: '涟漪茶饮 — 品牌全案',
+      desc: '新式茶饮品牌从命名、Logo 到全渠道视觉体系搭建。项目涵盖品牌策略、视觉识别系统（VIS）、包装设计、门店空间视觉规范及线上传播物料。以"水波纹"为核心视觉符号，融合东方美学与现代极简风格，帮助品牌在竞争激烈的茶饮市场中建立独特识别度。'
+    },
+    '2': {
+      image: 'images/work2_full.jpg',
+      tag: 'UI 设计', name: 'Flow 冥想 App redesign',
+      desc: '心理健康类 App 的全面视觉升级与交互优化。重新定义色彩系统与组件库，以柔和的渐变与微动效营造沉浸式冥想体验。优化导航结构与关键用户流程，将核心功能触达效率提升 40%。'
+    },
+    '3': {
+      image: 'images/work3_full.jpg',
+      tag: '插画', name: '城市记忆系列插画',
+      desc: '以上海街头场景为主题的手绘风格系列插画作品，共 12 幅。捕捉弄堂、外滩、法租界梧桐道等标志性场景的日常瞬间，采用水彩与数字绘画结合的混合技法，曾入选 2024 年上海国际插画展。'
+    },
+    '4': {
+      image: 'images/work4_full.jpg',
+      tag: '品牌设计', name: '星络科技 — 品牌升级',
+      desc: 'B2B 科技公司品牌视觉重塑项目。从 Logo 设计、色彩规范到全套 VI 手册输出，将原本零散的视觉资产统一为系统化的品牌语言。新标识以"连接"为核心概念，传达技术赋能商业的定位，上线后品牌认知度提升显著。'
+    },
+    '5': {
+      image: 'images/work5_full.jpg',
+      tag: 'UI 设计', name: '悦食 — 美食社交平台',
+      desc: '从 0 到 1 的产品视觉设计，涵盖 iOS/Android 两端。以"食欲感"为设计关键词，运用高饱和度暖色调与大面积食物图片呈现视觉冲击力。设计完整的 Design System，包含 60+ 组件与交互规范。'
+    },
+    '6': {
+      image: 'images/work6_full.jpg',
+      tag: '插画', name: '二十四节气系列',
+      desc: '以中国传统节气为灵感的系列商业插画作品。每幅作品融合对应的物候特征与民俗元素，采用现代扁平化风格重新诠释传统文化符号。该系列已被多个文化类品牌授权用于产品包装与周边开发。'
+    }
+  };
+
+  // 绑定卡片点击事件
+  cards.forEach(function(card) {
+    card.addEventListener('click', function() {
+      var id = card.getAttribute('data-id');
+      var data = workData[id];
+      if (!data) return;
+
+      // 显示完整大图（非封面缩略图）
+      lightboxImage.innerHTML = data.image
+        ? '<img src="' + data.image + '" alt="' + data.name + '">'
+        : '作品图片占位';
+      lightboxTag.textContent = data.tag;
+      lightboxName.textContent = data.name;
+      lightboxDesc.textContent = data.desc;
+
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // 关闭灯箱
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+  });
+
+})();
+</script>
+
+<!--
+  ============================================================
+  编辑指南 (Editor Guide)
+  ============================================================
+
+  本文件是一个完整的视觉设计师作品集网站模板，所有内容均可替换。
+  以下是按板块整理的修改指引，搜索 "EDIT:" 注释可快速定位所有编辑点。
+
+  【全局配色】
+  - 搜索 ":root {" 找到 CSS 变量区，修改颜色值即可全局生效
+  - --color-accent: 主点缀色（默认电光蓝 #4A90E2）
+  - --color-bg: 背景色 / --color-text: 正文色
+
+  【导航栏】
+  - Logo/姓名: 搜索 "nav__logo" → 修改 "Designer" 为你的名字
+  - 导航项: 在 <ul class="nav__links"> 中增删 <li>
+
+  【Hero 区】
+  - 姓名: 搜索 "hero__name" → 修改 "张逸凡"
+  - 头衔: 搜索 "hero__role" → 修改
+  - 简介: 搜索 "hero__tagline" → 修改
+  - CTA 按钮: 搜索 "hero__cta" → 修改文字和链接
+
+  【关于我】
+  - 头像: 搜索 "about__avatar" → 将占位 <div> 替换为 <img src="头像路径">
+  - 简介文字: 搜索 "about__text" → 修改 <p> 中的内容
+
+  【工作经历】
+  - 搜索 "timeline__item" 找到每个经历节点
+  - 每条包含: timeline__company(公司) / timeline__role(职位) / timeline__date(时间) / timeline__desc(描述)
+  - 第 4 个节点默认被注释隐藏，取消注释即可启用
+
+  【作品集】
+  - 每个作品卡片在 .portfolio__card 中
+  - 修改图片: 将占位文字替换为 <img src="图片路径" alt="作品名">
+  - 修改信息: .portfolio__tag(标签) / .portfolio__name(名称) / .portfolio__desc(描述)
+  - data-category 属性: brand / ui / illustration，决定该卡片属于哪个筛选分类
+  - data-id: 关联灯箱详情数据，需与 workData 对象中的 key 对应
+  - 灯箱数据: 搜索 "workData = {" 在 JS 中修改每个作品在灯箱中的详细描述
+  - 第 7/8 个卡片默认被注释隐藏，取消注释即可启用，同时需在 workData 中添加对应的数据
+
+  【联系方式】
+  - 邮箱: 搜索 "zhangyifan@example.com" 替换
+  - 微信: 搜索 "zhangyifan_design" 替换
+  - 社交链接: 搜索 "Behance" 和 "站酷" 替换为你的真实链接
+
+  【页脚】
+  - 搜索 "张逸凡" 替换为你的名字
+  - 修改年份
+
+  【添加新板块】
+  - 参考现有 section 结构，复制修改即可
+  - 在导航栏添加对应的锚点链接
+
+  【部署】
+  - 本文件为零外部依赖纯静态页面，可直接用浏览器打开
+  - 或部署到任何静态托管服务（GitHub Pages、Vercel、Netlify 等）
+
+  ============================================================
+-->
+
+</body>
+</html>
