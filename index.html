@@ -1236,9 +1236,13 @@ img {
       if (!data) return;
 
       // 显示完整大图（非封面缩略图）
-      lightboxImage.innerHTML = data.image
-        ? '<img src="' + data.image + '" alt="' + data.name + '">'
-        : '作品图片占位';
+      if (data.video) {
+        lightboxImage.innerHTML = '<video src="' + data.video + '" controls autoplay playsinline style="max-width:100%;max-height:70vh;border-radius:12px;"></video>';
+      } else if (data.image) {
+        lightboxImage.innerHTML = '<img src="' + data.image + '" alt="' + data.name + '">';
+      } else {
+        lightboxImage.innerHTML = '作品图片占位';
+      }
       lightboxTag.textContent = data.tag;
       lightboxName.textContent = data.name;
       lightboxDesc.textContent = data.desc;
@@ -1250,6 +1254,8 @@ img {
 
   // 关闭灯箱
   function closeLightbox() {
+    var v = lightboxImage.querySelector('video');
+    if (v) { v.pause(); v.currentTime = 0; }
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
   }
