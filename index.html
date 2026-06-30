@@ -1237,7 +1237,7 @@ img {
 
       // 显示完整大图（非封面缩略图）
       if (data.video) {
-        lightboxImage.innerHTML = '<video src="' + data.video + '" controls autoplay playsinline style="max-width:100%;max-height:70vh;border-radius:12px;"></video>';
+        lightboxImage.innerHTML = '<video src="' + data.video + '" controls playsinline preload="none" style="max-width:100%;max-height:70vh;border-radius:12px;"></video>';
       } else if (data.image) {
         lightboxImage.innerHTML = '<img src="' + data.image + '" alt="' + data.name + '">';
       } else {
